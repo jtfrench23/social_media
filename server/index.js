@@ -9,6 +9,7 @@ import morgan from 'morgan';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import {register} from './controllers/auth.js';
+import authRoutes from "./routes/auth.js";
 // Configurations
 
 const __filename = fileURLToPath(import.meta.url);
@@ -39,6 +40,11 @@ const upload=multer({storage});
 // Routes with Files
 
 app.post('/auth/register', upload.single('picture'), register);
+
+// Routes
+
+app.use("/auth", authRoutes);
+
 
 // Mongoose Setup
 
