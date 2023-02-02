@@ -59,6 +59,7 @@ const CommentBox = (postId) => {
         }) => (
         <form onSubmit={handleSubmit}>
             <Box
+            mt="1rem"
             display="grid"
             gap="30px"
             gridTemplateColumns="repeat(4, minmax(0, 1fr))"
@@ -76,17 +77,14 @@ const CommentBox = (postId) => {
                         Boolean(touched.comment) && Boolean(errors.comment)
                     }
                     helperText={touched.comment && errors.comment}
-                    sx={{ gridColumn: "span 2" }}
+                    sx={{ gridColumn: "span 3" }}
                 />
-                
-            </Box>
-          {/* BUTTONS */}
-            <Box>
                 <Button
                     fullWidth
                     type="submit"
                     sx={{
-                    m: "2rem 0",
+                    gridColumn:"span 1",
+                    m: "0",
                     p: "1rem",
                     backgroundColor: palette.primary.main,
                     color: palette.background.alt,
@@ -96,6 +94,8 @@ const CommentBox = (postId) => {
                     comment
                 </Button>
             </Box>
+                
+            
         </form>
         )}
     </Formik>
