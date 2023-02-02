@@ -1,4 +1,3 @@
-
 import {
     Box,
     Button,
@@ -6,19 +5,15 @@ import {
     useMediaQuery,
     useTheme,
 } from "@mui/material";
-
 import { Formik } from "formik";
 import * as yup from "yup";
-
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import { setPost } from "state";
 
 const commentSchema = yup.object().shape({
     comment: yup.string().required("required")
 });
-
 
 
 const initialValues = {
